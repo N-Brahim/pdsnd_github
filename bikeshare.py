@@ -11,30 +11,26 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
 
     try:
-        print('Would you like to see data for Chicago, New york or Washington?: ')
-        city = input()
+        city = input('Would you like to see data for Chicago, New york or Washington?: ')
         while city not in(CITY_DATA.keys()):
             print('you\'ve given invalid city name!.choose only between Chicago, New york or Washington.')
-            print('Would you like to see data for Chicago, New york or Washington?: ')
-            city = input()
+            city = input('Would you like to see data for Chicago, New york or Washington?: ')
     except Exception as e:
         print("Exception occurred: {}".format(e))
+
     try:
-        print('Choose a month from january to june to filter the data by month, type "all" if no filter is needed: ')
-        month = input()
+        month = input('Choose a month from january to june to filter the data by month, type "all" if no filter is needed: ')
         while month not in ['january', 'february', 'march', 'april', 'may', 'june', 'all']:
             print('you\'ve given invalid month! try again')
-            print('Choose a month from january to june to filter the data by month, type "all" if no filter is needed: ')
-            month = input()
+            month = input('Choose a month from january to june to filter the data by month, type "all" if no filter is needed: ')
     except Exception as e:
         print("Exception occurred: {}".format(e))
+
     try:
-        print('Choose a day of the week to filter the data by day or type "all" for no filter at all: ')
-        day = input()
+        day = input('Choose a day of the week to filter the data by day or type "all" for no filter at all: ')
         while day not in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']:
             print('Not a valid day! try again')
-            print('Choose a day of the week to filter the data by day or type "all" for no filter at all: ')
-            day = input()
+            day = input('Choose a day of the week to filter the data by day or type "all" for no filter at all: ')
     except Exception as e:
         print("Exception occurred: {}".format(e))
 
@@ -155,15 +151,13 @@ def raw_data(df):
     x = 0
     y = 5
     while True:
-        print('Would you like to see the raw data?: ')
-        answer = input()
+        answer = input('Would you like to see the raw data?: ')
         if answer == 'yes':
             print(df.iloc[x:y])
             x += 5
             y += 5
             while True:
-                print('Would you like to see more data?: ')
-                more = input()
+                more = input('Would you like to see more data?: ')
                 if more == 'yes':
                     print(df.iloc[x:y])
                     x += 5
